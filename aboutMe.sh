@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#test coment
-
 clear
 
 name=`whoami`
