@@ -21,7 +21,7 @@ rname=`pinky -l  $uname | cut -d: -f 3 | head -n 1 | tr -s ' '`
 host=$(hostname)
 
 #Last twos logins cut into one line
-log_last_2=$(last -2 $LOGNAME | sed -e 's/'.'*\.[[:digit:]][[:digit:]][[:digit:]]//' -e 's/-.*//' -e 's/s.*//' | head -2 | sed 'N;s/\n//')
+log_last_2=$(last -2 $LOGNAME | sed -e 's/'.'*\.[[:digit:]]*//' -e 's/-.*//' -e 's/s.*//' | head -2 | sed 'N;s/\n//')
 
 #Uptime cut down to a useable form
 uptime_par=$(uptime | sed -e 's/'.'*p//' -e 's/us'.'*//')
