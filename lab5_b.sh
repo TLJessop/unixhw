@@ -29,7 +29,7 @@ if [ "$arg_num" -ne 2 ]; then
 fi
 
 #Tests to see if first arg is -a or -b
-if [ "$a_or_b" != "-a" "-a" "$a_or_b" != "-b" ]; then
+if [ "$a_or_b" != -a "-a" "$a_or_b" != "-b" ]; then
 	echo "Your first argument must be -a or -b"
 	echo "Your first argument was $a_or_b"
 	error_flag=1
