@@ -90,7 +90,7 @@ case $1 in
 		fi
 
 		#Testing for excute premissions
- 		if [ -e $2 ]; then 
+ 		if [ -x $2 ]; then 
 			echo "You have excute permission for $2"
 		fi
 	else
