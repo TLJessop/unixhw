@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #wellcome message
-echo "Wellcome to $(basename $0) your terminal calandar event wizard"
+echo "Wellcome to $(basename $0) your terminal calendar event wizard."
 
-#this function stiches lines back together in read mode
+#this function stitch lines back together in read mode
 stich(){	
 	until [[ $2 = *:* ]]; do
 	echo "$2">>line_stich
@@ -66,9 +66,9 @@ time_writer(){
 
 error(){
 	echo "$(basename $0): Error your first argument must be -c or -r"
-	echo "-c is for create mode and -r is for read mode"
-	echo "If useing read mode your second argument must be an .ical file"
-	echo "If useing create mode only the first argument is required"
+	echo "-c is for create mode and -r is for read mode."
+	echo "If using read mode your second argument must be an .ical file."
+	echo "If using create mode only the first argument is required."
 	exit 1  	
 }
 
@@ -76,8 +76,8 @@ error(){
 
 #Tests to see if valid number of arguments was given
 if [ $# -lt 1 -o $# -gt 2 ]; then
-	echo "You may give one or two arguments depending on mode used"
-	echo "You gave $# arguments"
+	echo "You may give one or two arguments depending on mode used."
+	echo "You gave $# arguments."
 	error
 
 #tests to see if first argument is a valid option
@@ -119,14 +119,14 @@ fi
 if [ "$1" = "-c" ]; then
 
 #Start time and date layer
-	#reads in event name
+	#reads in the event name
 	echo "What would you like to call your event?"
 	read event_name
 
 	#reads in start date
-	echo "In what on date does your event start?"
+	echo "On what date does your event start?"
 	date_writer
-	stdate=$(echo $wdate)
+	stdate=$wdate
 	wdate=
 	
 	#reads in start time
@@ -185,6 +185,7 @@ if [ "$1" = "-c" ]; then
 	echo "END:VCALENDAR" >>${event_name:0:3}${stdate:4:4}.ical
 fi #close create mode functional path
 
+#read mode funtional path
 if [ "$1" = -r ]; then
 		
 #resets the argument listing for the parsing while loop
